@@ -1,3 +1,4 @@
+'''
 print("---------1---------")
 def GramToOunces(gram):
     return gram / 28.3495231
@@ -18,5 +19,33 @@ def solve(numheads, numlegs):
 
 legs = 94
 heads = 35
-print("Rabbits:", solve(heads, legs)[0], ", Chickens:", solve(heads, legs)[1])
+solvedLH = solve(heads, legs)
+print("Rabbits:", solvedLH[0], ", Chickens:", solvedLH[1])
 
+print("\n---------4---------")
+
+'''
+def filter_prime(numbers):
+    numstr = ""
+    array_numbers = []
+    prime_numbers = []
+    for num in numbers:
+        if num != " ":
+            numstr += num
+        else:
+            array_numbers.append(int(numstr))
+            numstr = ""
+    array_numbers.append(int(numstr))
+    for num in array_numbers:
+        is_prime = True
+        for i in range(2, num):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime and num > 1:
+            prime_numbers.append(num)
+    print (prime_numbers)
+    return prime_numbers
+numbers = input("Numbers separated by spaces: ")
+                    
+print( *filter_prime(numbers), sep = ", ")

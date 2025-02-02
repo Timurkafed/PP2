@@ -11,14 +11,30 @@ def All_IMDB_above_5_5(list):
     sublist = []
     for movie in list:
         if movie["imdb"] > 5.5:
-            sublist.append(movie)
+            sublist.append(movie["name"])
     return sublist
+
+def category(category):
+    category_movies = []
+    for movie in movies:
+        if movie["category"] == category:
+            category_movies.append(movie["name"])
+    return category_movies
 
 def Avarage_IMDB(list):
     sum = 0
     for movie in list:
         sum += movie["imdb"]
     return sum/len(list)
+
+def categoryIMDB(category):
+    sum = 0
+    category_movies = []
+    for movie in movies:
+        if movie["category"] == category:
+            category_movies.append(movie)
+            sum += movie["imdb"]
+    return sum/len(category_movies)
 
 movies = [
 {
@@ -104,5 +120,11 @@ print(MovieIMDB(movies, "Detective"))
 print("\n---------2---------")
 print(All_IMDB_above_5_5(movies))
 
+print("\n---------3---------")
+print(category("Romance"))
+
 print("\n---------4---------")
 print(Avarage_IMDB(movies))
+
+print("\n---------5---------")
+print(categoryIMDB("Romance"))
