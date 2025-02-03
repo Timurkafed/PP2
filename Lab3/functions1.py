@@ -179,7 +179,10 @@ def find(num, t):
     if num2 == num:
         print(f'Good job, KBTU! You guessed my number in {t} guesses!')
         return
-    print('\nYour guess is too low.')
+    elif num2 < num:
+        print('\nYour guess is too low.')
+    else:
+        print('\nYour guees is too high.')
     return find(num, t)
 
 name = input('Hello! What is your name?\n')
