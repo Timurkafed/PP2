@@ -1,0 +1,27 @@
+{
+    "name": "Timur",
+    "age": 18,
+    "hobbies": [
+        "reading",
+        "volleyball",
+        "programming"
+    ],
+    "favorite_foods": {
+        "breakfast": "eggs",
+        "lunch": "borsch'",
+        "dinner": "plov"
+    },
+    "has_pet": true,
+    "Mass": [
+        1,
+        "h",
+        {
+            "a": 1
+        },
+        [
+            1,
+            2,
+            3
+        ]
+    ]
+}
