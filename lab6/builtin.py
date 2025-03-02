@@ -27,11 +27,11 @@ def squareRoot(num, milsek):
     end = datetime.datetime.now() + delta
     while datetime.datetime.now() < end:
         pass
-    return(math.squareRoot(num))
+    return(math.sqrt(num))
 
 a = 25100
 b = 2123
-print("Square root of",a, "after", b, "miliseconds is", sqrt(a,b))
+print("Square root of",a, "after", b, "miliseconds is", squareRoot(a,b))
 
 
 #5
