@@ -16,8 +16,10 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
 x, y = WIDTH//2, HEIGHT//2
-status1 = "STOP"
-status2 = "STOP"
+statusR = "STOP"
+statusL = "STOP"
+statusU = "STOP"
+statusD = "STOP"
 
 running = True
 
@@ -30,27 +32,33 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT:
-                status1 = "RIGHT"
-            elif event.key == pygame.K_LEFT:
-                status1 = "LEFT"
-            elif event.key == pygame.K_DOWN:
-                status2 = "DOWN"
-            elif event.key == pygame.K_UP:
-                status2 = "UP"
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                statusR = "RIGHT"
+            if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                statusL = "LEFT"
+            if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                statusD = "DOWN"
+            if event.key == pygame.K_UP or event.key == pygame.K_w:
+                statusU = "UP"
+            if event.key == pygame.K_ESCAPE:
+                running = False
         elif event.type == pygame.KEYUP :            
-            if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
-                status2 = "STOP"
-            elif event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
-                status1 = "STOP"
-    if status1 == "RIGHT" and x+25 <= WIDTH:
-        x += 20
-    elif status1 == "LEFT" and x-25 >= 0:
-        x -= 20
-    if status2 == "DOWN" and y+25 <= HEIGHT:
-        y += 20
-    elif status2 == "UP" and y-25 >= 0:
-        y -= 20
+            if event.key == pygame.K_UP or event.key == pygame.K_w:
+                statusU = "STOP"
+            if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                statusD = "STOP"
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                statusR = "STOP"
+            if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                statusL = "STOP" 
+    if statusR == "RIGHT" and x+25 <= WIDTH:
+        x += 10
+    if statusL == "LEFT" and x-25 >= 0:
+        x -= 10
+    if statusD == "DOWN" and y+25 <= HEIGHT:
+        y += 10
+    if statusU == "UP" and y-25 >= 0:
+        y -= 10
             
     pygame.display.flip()
     clock.tick(60)
