@@ -10,7 +10,7 @@ class Ball():
 
 WIDTH, HEIGHT = 1920//1.5, 1080//1.5
 
-RED = (255,0, 122)
+RED = (122,0, 255)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
